@@ -43,7 +43,7 @@ class SignupScreen extends PureComponent {
                 </Item>
               </Form>
             </View>
-            <AppButton title="LOGIN" />
+            <AppButton title="SIGNUP"  onPress={() => this.props.navigation.navigate('Home')}/>
             <View style={[styles.centerText, styles.marginTopXs]}>
               <View style={styles.footer}>
                 <RegularText>Existing User?</RegularText>

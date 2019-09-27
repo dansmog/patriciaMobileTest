@@ -49,7 +49,7 @@ class LoginScreen extends PureComponent {
                 <RegularText>Forgot Password?</RegularText>
               </TouchableOpacity>
             </View>
-            <AppButton title="LOGIN" />
+            <AppButton title="LOGIN"  onPress={() => this.props.navigation.navigate('Home')}/>
             <View style={[styles.centerText, styles.marginTopXs]}>
               <View style={styles.footer}>
                 <RegularText>New User?</RegularText>
