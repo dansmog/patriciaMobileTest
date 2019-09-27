@@ -3,26 +3,31 @@ import {View, Image, StyleSheet} from 'react-native';
 
 import PropTypes from 'prop-types';
 import colors from '../utils/colors';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+
+
 
 class AppHeader extends PureComponent {
   render() {
-    const { isCartHasItem } = this.props;
+    const {isCartHasItem, leftIcon, rightPressFunc} = this.props;
     return (
       <View style={styles.appHeader}>
         <View>
-          <Image
-            source={require('../assets/images/menu.png')}
-            style={{width: 30, height: 12}}
-          />
+          {leftIcon ? (
+            <Image
+              source={require('../assets/images/menu.png')}
+              style={{width: 30, height: 12}}
+            />
+          ) : null}
         </View>
         <View>
-          <View style={{position: 'relative'}}>
+          <TouchableOpacity style={{position: 'relative'}} onPress={rightPressFunc}>
             <Image
               source={require('../assets/images/shopping-basket.png')}
               style={{width: 24, height: 24}}
             />
-            {isCartHasItem ? <View style={styles.itemIsAvailable}/> : null}
-          </View>
+            {isCartHasItem ? <View style={styles.itemIsAvailable} /> : null}
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -40,12 +45,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
   },
   itemIsAvailable: {
-    width:8,
-    height:8,
+    width: 8,
+    height: 8,
     backgroundColor: colors.mainColor,
     borderRadius: 100,
-    position:"absolute",
+    position: 'absolute',
     left: 18,
-    bottom: 20
-  }
+    bottom: 20,
+  },
 });

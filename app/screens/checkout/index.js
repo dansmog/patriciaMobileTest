@@ -78,7 +78,7 @@ class CheckoutScreen extends PureComponent {
               </View>
             </View>
             <View style={styles.marginBottomXs}>
-              <AppButton title="Proceed to Checkout" />
+              <AppButton title="Proceed to Checkout" onPress={() => this.props.navigation.navigate('Orders')}/>
             </View>
           </ScrollView>
         </ThemeContainer>

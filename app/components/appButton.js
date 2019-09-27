@@ -6,9 +6,9 @@ import colors from '../utils/colors';
 
 class AppButton extends PureComponent {
   render(){
-    const { title } = this.props;
+    const { title, onPress } = this.props;
     return (
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={onPress}>
         <BoldText style={styles.buttonText}>{title}</BoldText>
       </TouchableOpacity>
     )

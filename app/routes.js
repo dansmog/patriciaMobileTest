@@ -9,6 +9,8 @@ import { createStackNavigator } from 'react-navigation-stack';
 import LoginScreen from "./screens/login";
 import SignupScreen from "./screens/signup";
 import CheckoutScreen from "./screens/checkout"
+import HomeScreen from "./screens/home";
+import OrderScreen from "./screens/orders";
 
 
 
@@ -37,16 +39,27 @@ const AuthNavigator = createStackNavigator(
 
 const MainNavigator = createStackNavigator(
   {
+    Home: {
+      screen: HomeScreen,
+      navigationOptions: {
+        header: null
+      }
+    },
     Checkout: {
       screen: CheckoutScreen,
       navigationOptions: {
         header: null
       }
     },
-   
+    Orders: {
+      screen: OrderScreen,
+      navigationOptions: {
+        header: null
+      }
+    }
   },
   {
-    initialRouteName: 'Checkout',
+    initialRouteName: 'Home',
     navigationOptions: {
       header: null
     }
