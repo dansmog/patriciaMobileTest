@@ -4,8 +4,11 @@ import {
   createSwitchNavigator
 } from "react-navigation";
 import { createStackNavigator } from 'react-navigation-stack';
+
+
 import LoginScreen from "./screens/login";
 import SignupScreen from "./screens/signup";
+import CheckoutScreen from "./screens/checkout"
 
 
 
@@ -32,14 +35,31 @@ const AuthNavigator = createStackNavigator(
   }
 );
 
-
+const MainNavigator = createStackNavigator(
+  {
+    Checkout: {
+      screen: CheckoutScreen,
+      navigationOptions: {
+        header: null
+      }
+    },
+   
+  },
+  {
+    initialRouteName: 'Checkout',
+    navigationOptions: {
+      header: null
+    }
+  }
+);
 
 const AppNavigator = createSwitchNavigator(
   {
-    Auth: AuthNavigator
+    Auth: AuthNavigator,
+    Main: MainNavigator
   },
   {
-    initialRouteName: "Auth",
+    initialRouteName: "Main",
     navigationOptions: {
       header: null
     }
